@@ -1,2 +1,2 @@
-flask-application-factory>=0.1
+flask-unchained>=0.1
 flask-mail>=0.9.1
