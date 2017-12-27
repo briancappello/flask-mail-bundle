@@ -5,5 +5,5 @@ from .send_mail import send_mail, send_mail_async
 
 
 class FlaskMailBundle(Bundle):
-    name = 'mail'
+    command_group_names = ['mail']
     extensions_module_name = 'extension'
