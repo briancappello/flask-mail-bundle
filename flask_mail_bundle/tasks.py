@@ -1,4 +1,4 @@
-from .extension import mail
+from .extensions import mail
 from .utils import get_message_plain_text
 
 try:

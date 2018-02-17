@@ -1,7 +1,7 @@
 from flask import current_app as app, render_template
 from flask_mail import Message
 
-from .extension import mail
+from .extensions import mail
 from .tasks import send_mail_async_task
 from .utils import get_message_plain_text
 

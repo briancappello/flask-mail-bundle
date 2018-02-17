@@ -11,11 +11,3 @@ class Mail(BaseMail):
         # overridden to allow for runtime-modified config values
         state_value = getattr(self.state, name, None)
         return current_app.config.get(('mail_' + name).upper(), state_value)
-
-
-mail = Mail()
-
-
-EXTENSIONS = {
-    'mail': mail,
-}
