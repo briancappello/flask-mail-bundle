@@ -1,6 +1,6 @@
 import os
 
-from flask_unchained import get_boolean_env
+from flask_unchained.utils import get_boolean_env
 
 
 class BaseConfig:
