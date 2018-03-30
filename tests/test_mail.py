@@ -2,7 +2,7 @@ import pytest
 
 from flask_mail import Message
 from flask_mail_bundle import mail
-from flask_mail_bundle.utils import send_mail
+from flask_mail_bundle.utils import _send_mail
 
 
 subject = 'hello world'
@@ -20,7 +20,7 @@ html = '''\
 @pytest.mark.options(MAIL_DEFAULT_SENDER=sender)
 class TestMail:
     def test_send_mail(self, outbox, templates):
-        send_mail(subject, recipient, 'send_mail.html')
+        _send_mail(subject, recipient, 'send_mail.html')
         assert len(outbox) == len(templates) == 1
         assert templates[0].template.name == 'send_mail.html'
         msg = outbox[0]

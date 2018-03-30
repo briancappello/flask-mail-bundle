@@ -18,7 +18,7 @@ class Mail(_MailMixin, metaclass=ConfigPropertyMeta):
     suppress: bool = ConfigProperty('MAIL_SUPPRESS_SEND')
     ascii_attachments: bool = ConfigProperty()
 
-    send: FunctionType = ConfigProperty('MAIL_SEND_TASK')
+    send: FunctionType = ConfigProperty('MAIL_SEND_FN')
 
     def send_message(self, subject=None, to=None, **kwargs):
         to = to or kwargs.pop('recipients', [])
