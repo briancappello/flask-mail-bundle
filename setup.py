@@ -36,8 +36,12 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
     ],
-    packages=find_packages(include=['flask_mail_bundle']),
+    py_modules=['flask_mail'],
+    packages=find_packages(exclude=['tests']),
     install_requires=read_requirements('requirements.txt'),
+    extras_require={
+        'test': ['mock', 'pytest', 'pytest-flask', 'speaklater'],
+    },
     python_requires='>=3.6',
     include_package_data=True,
     zip_safe=False,

@@ -1,6 +1,6 @@
 from flask_unchained import Bundle
 
-from .extensions import mail
+from .extensions import Mail, mail
 
 
 class FlaskMailBundle(Bundle):
