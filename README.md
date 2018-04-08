@@ -62,7 +62,7 @@ def bulk_send_mail(subject_or_message, to=None, template=None, **kwargs):
 
 
 # and in your app bundle config:
-class BaseConfig:
+class Config:
     # ...
     MAIL_SEND_FN = bulk_send_mail
 ```

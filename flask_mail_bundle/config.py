@@ -7,7 +7,7 @@ from werkzeug.local import LocalProxy
 from .utils import _send_mail
 
 
-class BaseConfig:
+class Config:
     MAIL_SERVER = os.getenv('FLASK_MAIL_SERVER', '127.0.0.1')
     MAIL_PORT = os.getenv('FLASK_MAIL_PORT', 25)
     MAIL_USERNAME = os.getenv('FLASK_MAIL_USERNAME', None)
@@ -28,11 +28,11 @@ class BaseConfig:
     MAIL_ASCII_ATTACHMENTS = os.getenv('FLASK_MAIL_ASCII_ATTACHMENTS', False)
 
 
-class DevConfig(BaseConfig):
+class DevConfig:
     MAIL_PORT = os.getenv('FLASK_MAIL_PORT', 1025)  # MailHog
 
 
-class ProdConfig(BaseConfig):
+class ProdConfig:
     MAIL_PORT = os.getenv('FLASK_MAIL_PORT', 465)
     MAIL_USE_SSL = get_boolean_env('FLASK_MAIL_USE_SSL', True)
 
@@ -41,5 +41,5 @@ class StagingConfig(ProdConfig):
     pass
 
 
-class TestConfig(BaseConfig):
+class TestConfig:
     TESTING = True

@@ -1,3 +1,4 @@
-include LICENSE requirements.txt
+include CHANGELOG.md LICENSE README.md requirements.txt setup.cfg tox.ini
 include *.py
+recursive-include tests *.py
 recursive-include flask_mail_bundle *.html

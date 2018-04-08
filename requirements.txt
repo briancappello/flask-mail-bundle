@@ -1,4 +1,4 @@
 blinker>=1.4
 beautifulsoup4>=4.6.0
-flask-unchained>=0.1
+flask-unchained>=0.2.0
 lxml>=4.2.1
