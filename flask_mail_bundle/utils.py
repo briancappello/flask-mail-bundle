@@ -48,7 +48,8 @@ def make_message(subject_or_message, to, template=None, **kwargs):
     return msg
 
 
-def _send_mail(subject_or_message, to=None, template=None, **kwargs):
+def _send_mail(subject_or_message=None, to=None, template=None, **kwargs):
+    subject_or_message = subject_or_message or kwargs.pop('subject')
     to = to or kwargs.pop('recipients', [])
     msg = make_message(subject_or_message, to, template, **kwargs)
     with mail.connect() as connection:
