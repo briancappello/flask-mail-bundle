@@ -37,7 +37,10 @@ def make_message(subject_or_message, to, template=None, **kwargs):
     if isinstance(subject_or_message, Message):
         return subject_or_message
 
-    to = to if isinstance(to, (list, tuple)) else [to]
+    if isinstance(to, tuple):
+        to = list(to)
+    elif not isinstance(to, list):
+        to = [to]
     msg = Message(subject=subject_or_message, recipients=to, **{
         k: kwargs[k] for k in message_kwargs & set(kwargs)})
 

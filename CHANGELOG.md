@@ -3,6 +3,7 @@
 ## 0.2.1 (unreleased)
 
 * support `subject` as a kwarg to the send_mail function
+* always coerce recipients to a list (not tuple or str)
 
 ## 0.2.0 (2018/04/07)
 
